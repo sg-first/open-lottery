@@ -76,14 +76,18 @@
 		<section id="portfolio" class="page-section nopaddingbottom">
 			<div class="black">
 				<h1 class="fade-down centered section-title">付款方式</h1>
-				<h4 class="fade-down centered section-title">支付宝 微信 QQ</h4>
 				<hr class="fade-down">
 			</div>
-			<a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-			<img src="assets/img/bg/zfb.jpg" width="30%" height="30%">
-			<img src="assets/img/bg/wx.jpg" width="30%" height="30%">
-			<img src="assets/img/bg/qq.jpg" width="30%" height="30%">
-			<br><br><br>
+			<a id="space1"></a>
+			<img src="assets/img/bg/zfb.jpg" width="40%" height="40%"><br>
+			<a id="space11">支付宝</a><br><br>
+			<a id="space2"></a>
+			<img src="assets/img/bg/wx.jpg" width="40%" height="40%"><br>
+			<a id="space22">微信</a><br><br>
+			<a id="space3"></a>
+			<img src="assets/img/bg/qq.jpg" width="40%" height="40%"><br>
+			<a id="space33">QQ</a><br><br>
+			<br>
 		</section>
 
 	</div>
@@ -107,6 +111,24 @@
 				  "assets/img/bg/xcbl.png"
 			  ], {duration: 5000, fade: 1000});
 			});
+			
+		function addSpace(num, id)
+		{
+			code="";
+			for (var i=0;i<num;i++)
+				code+="&nbsp;";
+			oldCode=$('#'+id).text();
+			$('#'+id).html(code+oldCode);
+		}
+		
+		spaceNum=29;
+		addSpace(spaceNum,"space1");
+		addSpace(spaceNum,"space2");
+		addSpace(spaceNum,"space3");
+		spaceNum=44;
+		addSpace(spaceNum,"space11");
+		addSpace(spaceNum,"space22");
+		addSpace(spaceNum,"space33");
 	</script>
 
   </body>
