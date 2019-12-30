@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
+
+    <title>Infinity | </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->   
+    <link href="assets/css/elusive-webfont.css" rel="stylesheet" >
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/pe-icons.css" rel="stylesheet">
+ 	<link href="assets/css/style.css" rel="stylesheet">
+    
+    <script src="assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/modernizr.custom.js"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+<body data-spy="scroll" data-offset="0" data-target="#navbar-main">
+
+  <div id="preloader"></div>
+
+  	<div id="search-wrapper">
+  		<input id="search-box" placeholder="Search" />
+  	</div>  
+  
+  	<div id="navbar-main">
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">				
+					<a class="navbar-brand" href="index.html"><h1>大会抽奖</h1></a>
+					<button type="button" class="navbar-toggle dropdown-toggle" id="open-menu" data-toggle="dropdown" data-target="#main-navigation">
+						<i class="el-icon-lines"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+    </div>
+
+    <div id="headerwrap" name="home" class="fullheight">
+		<header class="clearfix fullheight">
+			<div class="vertical-center">
+		 		<p class="animated slideInLeft">选中的获奖者是</p>
+		 		<p id="winner" class="animated slideInRight">获奖者</p>
+		 		<a onclick="stop()" class="btn homebtn smoothScroll">决策停止</a>
+				<br>
+				<a href="xuan.html" class="btn homebtn smoothScroll">退出</a>
+	 		</div>
+  		</header>	    
+    </div>
+
+	<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="assets/js/plugins.js"></script>
+	<script type="text/javascript" src="assets/js/init.js"></script>
+	<script>
+		jQuery(document).ready(function($){
+			'use strict';
+			  jQuery('body').backstretch([
+				  "assets/img/bg/bg11.jpg"
+				, "assets/img/bg/bg21.jpg"
+				, "assets/img/bg/bg31.jpg"
+			  ], {duration: 1000, fade: 500});
+			});
+	
+		var timeout;
+		var randContent=["王志颖","包顺星","陈俊丹","张佳豪","王逸晨","陈宇乐","石益珊","高嘉欣",
+"杨世伟","余海璐","丁胡宇航","龙筱清","张可俊","曾尘钰","张治洋","李子晗","彭义冉","邱雨彤",
+"袁振威","广彦增","张从睿","陈叙尹","陈玲","盛津津","李正宇","李兴乐","卢从浩","李志高","邹政平",
+"詹梦琪","陈璐","马桂嵩","沈佳乐","朱静柔","李忠恕","盛传宇","熊倩倩","刘一鸣","秦露","桂明乐",
+"樊欣洋","李家辉","方林芯","周言宜","刘春旭","余成喜","方维书","施云青","涂悦馨","潘洪涛",
+"熊家骆"];
+		
+		function start()
+		{
+			var r=Math.floor(Math.random()*randContent.length);
+			$('#winner').text(randContent[r]);
+			timeout=setTimeout(start,50);
+		}
+		
+		function stop()
+		{
+			clearTimeout(timeout);
+		}
+		
+		start();
+	</script>
+
+  </body>
+
+</html>
